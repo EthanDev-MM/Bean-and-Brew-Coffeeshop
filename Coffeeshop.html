@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Twinkle | University </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" type="image/png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="Coffeeshophome.css">
+    <link rel="stylesheet" href="special-offers.css">
+      <link rel="stylesheet" href="BrewingEquipment.css">
+      <link rel="stylesheet" href="Event_and_workshop.css">
+</head>
+
+<body>
+
+<!-- WELCOME MODAL -->
+<div class="modal fade" id="welcomeModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content bb-modal text-center">
+      <button type="button" class="modal-x" data-bs-dismiss="modal">✕</button>
+      <div class="modal-icon">☕</div>
+      <h5>Welcome to Bean & Brew</h5>
+      <p>Discover rich flavors and enjoy <strong>20% off</strong> your first order.</p>
+      <div class="modal-actions">
+        <button class="btn-modal-outline" data-bs-dismiss="modal">Maybe Later</button>
+        <button class="btn-modal-gold" onclick="goToForm()">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="Coffeeshop.html">
+      <img src="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" alt="Logo" class="nav-logo">
+      <span>Bean <em>&</em> Brew</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="Coffeeshop.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Coffeeselection.html">Coffee Selection</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Equipment</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Brewing_Machine.html">Brewing Machines</a></li>
+            <li><a class="dropdown-item" href="Otheraccessories.html">Coffee Accessories</a></li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="CoffeeSelection.html">Shopping</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events & Workshop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Barista_Training.html">Barista Training</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offers</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="special-offers.html">Special Offers</a></li>
+            <li><a class="dropdown-item" href="SubscriptionPlans.html">Subscription Plans</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item nav-icon-item">
+          <a class="nav-link nav-icon-link" href="#" onclick="toggleLogin(); return false;" aria-label="Account">
+            <i class="bi bi-person"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- LOGIN / REGISTER PANEL -->
+<div class="login-backdrop" id="loginBackdrop" onclick="toggleLogin()"></div>
+<div class="login-panel" id="loginForm">
+  <button class="login-panel-close" onclick="toggleLogin()" type="button" aria-label="Close">✕</button>
+  <div class="login-panel-inner">
+    <p class="panel-eyebrow">Members</p>
+    <h2 class="panel-title">Join Bean & Brew</h2>
+    <p class="panel-sub">Create your account and get 20% off your first order.</p>
+
+    <form onsubmit="return false;">
+      <div class="field-row">
+        <div class="field-group">
+          <label>First Name</label>
+          <input type="text" id="firstName" placeholder="Jane" required>
+        </div>
+        <div class="field-group">
+          <label>Last Name</label>
+          <input type="text" id="lastName" placeholder="Doe" required>
+        </div>
+      </div>
+      <div class="field-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="jane@example.com" required>
+      </div>
+      <div class="field-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="········" required>
+      </div>
+      <div class="field-group">
+        <label>Birthday</label>
+        <input type="date" id="birthday" required>
+      </div>
+      <button type="button" class="btn-register" onclick="sendMail()">
+        Create Account <i class="bi bi-arrow-right"></i>
+      </button>
+      <p class="panel-note">✦ 20% discount applied automatically to your first order</p>
+    </form>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1600&q=85&auto=format&fit=crop" alt="Cafe interior" class="hero-img" loading="eager">
+    <div class="hero-veil"></div>
+  </div>
+  <div class="hero-body container">
+    <p class="hero-eyebrow">Specialty Coffee · Est. 2026</p>
+    <h1 class="hero-heading">More Than<br><em>a Cup</em></h1>
+    <p class="hero-lead">Crafted with care, served with soul.<br>Your perfect moment begins here.</p>
+    <div class="hero-ctas">
+      <a href="CoffeeSelection.html" class="cta-primary">Explore Menu</a>
+      <a href="Barista_Training.html" class="cta-ghost">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat"><span class="stat-n">12+</span><span class="stat-l">Origins</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><span class="stat-n">500+</span><span class="stat-l">Members</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><span class="stat-n">Daily</span><span class="stat-l">Fresh Roast</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>Single Origin ✦</span><span>Specialty Grade ✦</span><span>Fresh Roasted ✦</span>
+    <span>Latte Art ✦</span><span>Cold Brew ✦</span><span>Barista Trained ✦</span>
+    <span>Single Origin ✦</span><span>Specialty Grade ✦</span><span>Fresh Roasted ✦</span>
+    <span>Latte Art ✦</span><span>Cold Brew ✦</span><span>Barista Trained ✦</span>
+  </div>
+</div>
+
+<!-- MENU SPOTLIGHT -->
+<section class="menu-section section-pad">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">On The Menu</p>
+      <h2 class="section-title">Crafted for Every Mood</h2>
+    </div>
+    <div class="menu-grid">
+
+      <article class="menu-card">
+        <div class="mc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&auto=format&fit=crop" alt="Espresso" loading="lazy">
+          <span class="mc-tag">Bold</span>
+          <div class="mc-hover">
+            <a href="CoffeeSelection.html" class="mc-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-head-row">
+            <h3>Espresso</h3>
+            <span class="mc-price">$4.50</span>
+          </div>
+          <p>Intense, concentrated shot with rich crema. The foundation of all great coffee.</p>
+        </div>
+      </article>
+
+      <article class="menu-card menu-card--featured">
+        <div class="mc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&auto=format&fit=crop" alt="Signature Latte" loading="lazy">
+          <span class="mc-tag mc-tag--popular">Most Loved</span>
+          <div class="mc-hover">
+            <a href="CoffeeSelection.html" class="mc-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-head-row">
+            <h3>Signature Latte</h3>
+            <span class="mc-price">$6.00</span>
+          </div>
+          <p>Velvety steamed milk with a double shot. Silky, smooth, and deeply satisfying.</p>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <div class="mc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=80&auto=format&fit=crop" alt="Cappuccino" loading="lazy">
+          <span class="mc-tag">Classic</span>
+          <div class="mc-hover">
+            <a href="CoffeeSelection.html" class="mc-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-head-row">
+            <h3>Cappuccino</h3>
+            <span class="mc-price">$5.50</span>
+          </div>
+          <p>Perfect harmony of espresso, steamed milk, and thick foam. A timeless classic.</p>
+        </div>
+      </article>
+
+    </div>
+    <div class="menu-cta">
+      <a href="CoffeeSelection.html" class="link-arrow">See Full Menu <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SPLIT -->
+<section class="about-section section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-col">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80&auto=format&fit=crop" alt="Our cafe" loading="lazy">
+        <div class="about-badge">
+          <span class="ab-num">2026</span>
+          <span class="ab-lbl">Est.</span>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <p class="eyebrow">Our Philosophy</p>
+        <h2 class="about-heading">Coffee is a <em>craft,</em><br>not just a drink</h2>
+        <p class="about-body">We source our beans directly from family farms across Ethiopia, Colombia, and Guatemala — building relationships that honour the grower and elevate the cup. Every batch is roasted in-house and served fresh.</p>
+        <div class="about-pillars">
+          <div class="pillar"><i class="bi bi-leaf"></i><span>Ethically Sourced</span></div>
+          <div class="pillar"><i class="bi bi-fire"></i><span>Fresh Roasted Daily</span></div>
+          <div class="pillar"><i class="bi bi-award"></i><span>Expert Baristas</span></div>
+        </div>
+        <a href="Barista_Training.html" class="link-arrow">Discover Our Story <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAROUSEL -->
+<section class="atmos-section">
+  <div class="container mb-5">
+    <div class="section-head">
+      <p class="eyebrow">The Experience</p>
+      <h2 class="section-title">Come As You Are</h2>
+    </div>
+  </div>
+  <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1400&q=80&auto=format&fit=crop" class="carousel-img" alt="More Than Coffee">
+        <div class="carousel-cap">
+          <h3>More Than Coffee</h3>
+          <p>Where moments turn into memories</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&q=80&auto=format&fit=crop" class="carousel-img" alt="Share Happiness">
+        <div class="carousel-cap">
+          <h3>Share Happiness</h3>
+          <p>Coffee tastes better with someone you love</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop" class="carousel-img" alt="Relax">
+        <div class="carousel-cap">
+          <h3>Relax &amp; Enjoy</h3>
+          <p>Your peaceful coffee sanctuary</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-ctrl-btn carousel-ctrl-btn--prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+    <button class="carousel-ctrl-btn carousel-ctrl-btn--next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top container">
+    <div class="ft-brand">
+      <img src="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" alt="Logo" class="ft-logo">
+      <p class="ft-name">Bean & Brew</p>
+      <p class="ft-est">Est. 2026</p>
+      <p class="ft-tagline">Where every cup tells a story.<br>Crafted with passion, served with love.</p>
+      <div class="ft-hours">
+        <div class="ft-hour-row"><span>Mon – Fri</span><span>7:00 AM – 10:00 PM</span></div>
+        <div class="ft-hour-row"><span>Sat – Sun</span><span>8:00 AM – 11:00 PM</span></div>
+      </div>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Explore</p>
+      <ul>
+        <li><a href="Coffeeshop.html">Home</a></li>
+        <li><a href="CoffeeSelection.html">Coffee Selection</a></li>
+        <li><a href="Brewing_Machine.html">Brewing Machines</a></li>
+        <li><a href="special-offers.html">Special Offers</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Contact</p>
+      <ul class="ft-contact">
+        <li><i class="bi bi-telephone"></i> +1 (123) 456-7890</li>
+        <li><i class="bi bi-envelope"></i> beanandbrew2026@gmail.com</li>
+        <li><i class="bi bi-geo-alt"></i> 123 Coffee Street, Brew City</li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Follow Us</p>
+      <div class="ft-socials">
+        <a href="https://www.instagram.com/starbucks/" target="_blank" rel="noopener" class="ft-social-link">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/Starbucks/" target="_blank" rel="noopener" class="ft-social-link">
+          <i class="bi bi-facebook"></i> Facebook
+        </a>
+        <a href="https://x.com/starbucks" target="_blank" rel="noopener" class="ft-social-link">
+          <i class="bi bi-twitter-x"></i> Twitter / X
+        </a>
+      </div>
+      <p class="ft-heading mt-4">Newsletter</p>
+      <div class="ft-newsletter">
+        <input type="email" placeholder="Your email address">
+        <button type="button">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Bean & Brew Co. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('nav-scrolled', window.scrollY > 40);
+});
+
+// Modal on load
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    new bootstrap.Modal(document.getElementById('welcomeModal')).show();
+  }, 800);
+});
+
+// Toggle login panel
+function toggleLogin() {
+  const panel = document.getElementById('loginForm');
+  const backdrop = document.getElementById('loginBackdrop');
+  const open = panel.classList.contains('is-open');
+  panel.classList.toggle('is-open', !open);
+  backdrop.classList.toggle('is-open', !open);
+  document.body.style.overflow = open ? '' : 'hidden';
+}
+
+// Go to form from modal
+function goToForm() {
+  bootstrap.Modal.getInstance(document.getElementById('welcomeModal')).hide();
+  setTimeout(toggleLogin, 350);
+}
+
+// Send registration email
+function sendMail() {
+  const first = document.getElementById('firstName').value;
+  const last = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+  const pass = document.getElementById('password').value;
+  const birth = document.getElementById('birthday').value;
+  if (!first || !email) { alert('Please fill in required fields.'); return; }
+  const subject = 'New User Registration';
+  const body = `Name: ${first} ${last}\nEmail: ${email}\nPassword: ${pass}\nBirthday: ${birth}`;
+  window.location.href = 'mailto:beanandbrew2026@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+}
+
+// Card entrance animation on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+document.querySelectorAll('.menu-card, .pillar, .stat').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

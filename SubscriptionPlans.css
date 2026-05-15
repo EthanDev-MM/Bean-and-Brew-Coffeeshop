@@ -1,0 +1,61 @@
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1f1f, #3e2c23);
+      color: #aa4f4f;
+    }
+
+    .title {
+      text-align: center;
+      margin: 40px 0;
+      color: #c8a96a;
+      font-weight: bold;
+    }
+
+    .plan-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .plan-card.active {
+      background: linear-gradient(135deg, #c8a96a, #e6c78b);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .plan-card h2 span {
+      font-size: 1rem;
+    }
+
+    .plan-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .plan-card ul li {
+      margin: 10px 0;
+    }
+
+    .plan-card button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 25px;
+      border: none;
+      background: #c8a96a;
+      color: #000;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .plan-card button:hover {
+      background: #e6c78b;
+    }

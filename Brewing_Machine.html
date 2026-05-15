@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Brewing Equipment | Bean & Brew</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Brewingequipment.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <img src="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" alt="Logo" class="rounded-circle" style="width:30px;height:30px;">
+    <a class="navbar-brand" href="Coffeeshop.html">Bean & Brew</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="Coffeeshop.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="CoffeeSelection.html">Coffee Selection</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Brewing Machines</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Brewing_Machine.html">Brewing Machine</a></li>
+            <li><a class="dropdown-item" href="Otheraccessories.html">Other Accessories</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events and Workshop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Barista_Training.html">Barista Training</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Special Offers</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="special-offers.html">Special Offers</a></li>
+            <li><a class="dropdown-item" href="SubscriptionPlans.html">Subscription Plans</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+    <!-- Cart + Search -->
+<div class="d-flex align-items-center gap-2 me-3">
+
+  <!-- 🔍 SEARCH BOX -->
+  <div class="search-wrap" id="searchWrap">
+    <i class="bi bi-search search-icon"></i>
+    <input type="text" id="searchInput" class="search-input" 
+           placeholder="Search products..." 
+           oninput="searchProducts(this.value)">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none;">✕</button>
+  </div>
+
+</div>
+
+
+  <!-- Cart Icon -->
+  <div class="cart-icon-wrap me-3" onclick="toggleCart()">
+    <i class="bi bi-bag"></i>
+    <span class="cart-badge" id="cartBadge">0</span>
+  </div>
+</nav>
+
+<!-- HERO BANNER -->
+<section class="page-hero">
+  <div class="hero-content">
+    <p class="hero-sub">Professional Grade</p>
+    <h1>Brewing Equipment</h1>
+    <p class="hero-desc">Craft the perfect cup with tools trusted by baristas worldwide</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container d-flex gap-2 flex-wrap justify-content-center">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+    <button class="filter-btn" onclick="filterProducts('espresso', this)">Espresso Machines</button>
+    <button class="filter-btn" onclick="filterProducts('grinder', this)">Grinders</button>
+    <button class="filter-btn" onclick="filterProducts('pour-over', this)">Pour Over</button>
+    <button class="filter-btn" onclick="filterProducts('french-press', this)">French Press</button>
+  </div>
+</div>
+
+<!-- PRODUCTS GRID -->
+<section class="products-section">
+  <div class="container">
+    <div class="products-grid" id="productsGrid">
+
+      <!-- Espresso Machine -->
+      <div class="product-card" data-category="espresso">
+        <div class="card-img-wrap">
+          <img src="https://i.ebayimg.com/images/g/yuAAAeSwmT9pvCLh/s-l1600.webp" alt="Espresso Machine">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Breville Barista Pro', 699)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+          <span class="badge-tag">Best Seller</span>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Breville</p>
+          <h3 class="card-title">Barista Pro Espresso Machine</h3>
+          <p class="card-desc">Integrated conical burr grinder with 30 grind settings. ThermoJet heating system.</p>
+          <!-- EXTRA DETAILS -->
+    <div class="detail-box">
+            <p>
+        Detail Description: 
+      </p>
+
+      <p>
+        <i class="bi bi-cup-hot-fill"></i>
+        Café-quality espresso in under 3 seconds
+      </p>
+
+      <p>
+        <i class="bi bi-speedometer2"></i>
+        Precise digital temperature control (PID)
+      </p>
+
+      <p>
+        <i class="bi bi-droplet-half"></i>
+        Powerful steam wand for silky milk texture
+      </p>
+
+      <p>
+        <i class="bi bi-award-fill"></i>
+        Premium stainless steel body design
+      </p>
+
+      <p>
+        <i class="bi bi-shield-check"></i>
+        2-Year manufacturer warranty included
+      </p>
+
+    </div><div class="card-footer-row">
+            <span class="card-price">$699<span class="price-old">$849</span></span>
+            <div class="qty-control" id="qty-0">
+              <button class="qty-btn" onclick="changeQty('qty-0', -1, 'Breville Barista Pro', 699)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-0', 1, 'Breville Barista Pro', 699)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grinder -->
+      <div class="product-card" data-category="grinder">
+        <div class="card-img-wrap">
+          <img src="https://www.seriouseats.com/thmb/Zn-0WeJQkm7nvSDG2dS7r72Q6dc=/fit-in/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/baratza-encore-conical-burr-coffee-grinder-black-71209a453b1d4427a430b517c21681c6.jpg">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Baratza Encore Grinder', 169)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Baratza</p>
+          <h3 class="card-title">Encore Conical Burr Grinder</h3>
+          
+          <p class="card-desc">40mm conical burr, 40 grind settings. Perfect for drip, pour over & espresso.</p>
+          <!-- BARATZA ENCORE -->
+<div class="detail-box">
+  <p>
+    Detail Description:
+  <p>
+    <i class="bi bi-gear-fill"></i>
+    40 precise grind settings for espresso to French press
+  </p>
+
+  <p>
+    <i class="bi bi-lightning-charge-fill"></i>
+    Powerful high-torque DC motor reduces heat
+  </p>
+
+  <p>
+    <i class="bi bi-cup-hot-fill"></i>
+    Consistent grind quality for balanced coffee extraction
+  </p>
+
+  <p>
+    <i class="bi bi-award-fill"></i>
+    Professional-grade conical burr grinder
+  </p>
+
+  <p>
+    <i class="bi bi-shield-check"></i>
+    Durable build with long-lasting performance
+  </p>
+
+</div>
+
+          <div class="card-footer-row">
+            <span class="card-price">$169</span>
+            <div class="qty-control" id="qty-1">
+              <button class="qty-btn" onclick="changeQty('qty-1', -1, 'Baratza Encore Grinder', 169)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-1', 1, 'Baratza Encore Grinder', 169)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pour Over -->
+      <div class="product-card" data-category="pour-over">
+        <div class="card-img-wrap">
+          <img src="https://down-th.img.susercontent.com/file/3a822f1cfae82b2116acf06ed47a1aa7@resize_w900_nl.webp">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Hario V60 Dripper', 24)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+          <span class="badge-tag new">New</span>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Hario</p>
+          <h3 class="card-title">V60 Ceramic Dripper</h3>
+          <p class="card-desc">Iconic spiral ribs for optimal extraction. Heat-retaining ceramic construction.</p>
+          <!-- HARIO V60 -->
+<div class="detail-box">
+  <p>
+    Detail Description:
+  <p>
+    <i class="bi bi-droplet-fill"></i>
+    Spiral rib design for optimal coffee flow
+  </p>
+
+  <p>
+    <i class="bi bi-cup-straw"></i>
+    Produces clean and aromatic pour-over coffee
+  </p>
+
+  <p>
+    <i class="bi bi-fire"></i>
+    Heat-resistant ceramic body for temperature stability
+  </p>
+
+  <p>
+    <i class="bi bi-stars"></i>
+    Lightweight minimalist Japanese brewing style
+  </p>
+
+  <p>
+    <i class="bi bi-heart-fill"></i>
+    Loved by specialty coffee enthusiasts worldwide
+  </p>
+
+</div>
+
+          <div class="card-footer-row">
+            <span class="card-price">$24</span>
+            <div class="qty-control" id="qty-2">
+              <button class="qty-btn" onclick="changeQty('qty-2', -1, 'Hario V60 Dripper', 24)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-2', 1, 'Hario V60 Dripper', 24)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- French Press -->
+      <div class="product-card" data-category="french-press">
+        <div class="card-img-wrap">
+          <img src="https://down-th.img.susercontent.com/file/sg-11134201-7reo1-m907dr1v5kte87.webp">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Bodum Chambord Press', 45)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Bodum</p>
+          <h3 class="card-title">Chambord French Press 8-Cup</h3>
+          <p class="card-desc">Stainless steel frame, borosilicate glass. Rich full-bodied brew every time.</p>
+          <!-- BODUM CHAMBORD -->
+<div class="detail-box">
+  <p>
+    Detail Description:
+  <p>
+    <i class="bi bi-cup-hot-fill"></i>
+    Classic French press system for rich coffee flavor
+  </p>
+
+  <p>
+    <i class="bi bi-droplet-half"></i>
+    Stainless steel plunger with reusable mesh filter
+  </p>
+
+  <p>
+    <i class="bi bi-clock-fill"></i>
+    Brews fresh coffee in just 4 minutes
+  </p>
+
+  <p>
+    <i class="bi bi-gem"></i>
+    Elegant glass and chrome frame design
+  </p>
+
+  <p>
+    <i class="bi bi-shield-check"></i>
+    Heat-resistant borosilicate glass construction
+  </p>
+
+</div>
+
+          <div class="card-footer-row">
+            <span class="card-price">$45</span>
+            <div class="qty-control" id="qty-3">
+              <button class="qty-btn" onclick="changeQty('qty-3', -1, 'Bodum Chambord Press', 45)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-3', 1, 'Bodum Chambord Press', 45)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moka Pot -->
+      <div class="product-card" data-category="espresso">
+        <div class="card-img-wrap">
+          <img src="https://www.espressocoffeeshop.com/1213-large_default/0-stone-pure-espresso-machine.jpg">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Bialetti Moka Express', 39)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Bialetti</p>
+          <h3 class="card-title">Stone Pure Espresso Machine</h3>
+                    <p class="card-desc">The original stovetop espresso maker. Octagonal design, made in Italy since 1933.</p>
+
+                    
+          <!-- BIALETTI -->
+<div class="detail-box">
+  <p>
+    Detail Description:
+  <p>
+    <i class="bi bi-fire"></i>
+    Traditional stovetop espresso brewing method
+  </p>
+
+  <p>
+    <i class="bi bi-cup-fill"></i>
+    Creates strong Italian-style espresso flavor
+  </p>
+
+  <p>
+    <i class="bi bi-award-fill"></i>
+    Authentic moka pot inspired espresso experience
+  </p>
+
+  <p>
+    <i class="bi bi-globe"></i>
+    Famous Italian coffee maker since 1933
+  </p>
+
+  <p>
+    <i class="bi bi-shield-check"></i>
+    Durable aluminum construction for daily use
+  </p>
+
+</div>
+          <div class="card-footer-row">
+            <span class="card-price">$39</span>
+            <div class="qty-control" id="qty-4">
+              <button class="qty-btn" onclick="changeQty('qty-4', -1, 'Bialetti Moka Express', 39)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-4', 1, 'Bialetti Moka Express', 39)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chemex -->
+      <div class="product-card" data-category="pour-over">
+        <div class="card-img-wrap">
+          <img src="https://www.espressoparts.com/cdn/shop/products/chemex-classic-6cup_2_500x.jpg?v=1635191325">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Chemex Classic 6-Cup', 49)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+          <span class="badge-tag">Popular</span>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Chemex</p>
+          <h3 class="card-title">Classic Series 6-Cup Coffeemaker</h3>
+          <p class="card-desc">Hourglass shape, polished wood collar. Produces clean, crisp, pure coffee.</p>
+          
+          <!-- CHEMEX -->
+<div class="detail-box">
+  <p>
+    Detail Description:
+  <p>
+    <i class="bi bi-droplet-fill"></i>
+    Thick paper filters remove bitterness and oils
+  </p>
+
+  <p>
+    <i class="bi bi-cup-straw"></i>
+    Produces smooth, clean, and bright coffee taste
+  </p>
+
+  <p>
+    <i class="bi bi-palette-fill"></i>
+    Elegant handcrafted glass coffee maker design
+  </p>
+
+  <p>
+    <i class="bi bi-tree-fill"></i>
+    Polished wooden collar with leather tie
+  </p>
+
+  <p>
+    <i class="bi bi-stars"></i>
+    Iconic specialty coffee brewing equipment
+  </p>
+
+</div><div class="card-footer-row">
+            <span class="card-price">$49<span class="price-old">$59</span></span>
+            <div class="qty-control" id="qty-5">
+              <button class="qty-btn" onclick="changeQty('qty-5', -1, 'Chemex Classic 6-Cup', 49)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-5', 1, 'Chemex Classic 6-Cup', 49)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SHOPPING CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h4><i class="bi bi-bag me-2"></i>Your Cart</h4>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="bi bi-bag-x"></i>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0</span>
+    </div>
+    <button class="checkout-btn">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__bottom">© 2026 Bean & Brew Co.</div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    if (cat === 'all' || card.dataset.category === cat) {
+      card.style.display = '';
+      card.style.animation = 'fadeUp 0.4s ease forwards';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

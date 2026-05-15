@@ -1,0 +1,322 @@
+:root {
+    --dark-green: #0f2e1c;
+    --coffee: #3e2c23;
+    --gold: #c8a96a;
+    --light-gold: #e6c78b;
+    --text: #f5f5f5;
+    --glass: rgba(255,255,255,0.05);
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, var(--dark-green), var(--coffee));
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link {
+    color: #ddd;
+}
+
+.navbar .nav-link:hover {
+    color: var(--gold);
+}
+
+.navbar-brand {
+    color: var(--gold);
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1509042239860-f550ce710b93") center/cover;
+}
+
+.hero h1 {
+    color: var(--light-gold);
+}
+
+/* CARDS */
+.card {
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* FORM */
+.coffee-form {
+    width: 320px;
+    padding: 40px;
+    background: var(--glass);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #888;
+    color: white;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: -15px;
+    font-size: 12px;
+    color: var(--gold);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, var(--gold), var(--light-gold));
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+button:hover {
+    box-shadow: 0 0 20px var(--gold);
+}
+
+/* FOOTER */
+.coffee-footer {
+    background: #0b1f14;
+    padding: 50px 0;
+}
+
+.coffee-footer h4,
+.coffee-footer h5 {
+    color: var(--gold);
+}
+
+.coffee-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.coffee-footer ul li:hover {
+    color: var(--light-gold);
+}
+
+/* CAROUSEL */
+.carousel-img{
+    height: 85vh;
+    object-fit: cover;
+    filter: brightness(45%);
+}
+
+.custom-caption{
+    bottom: 25%;
+}
+
+.custom-caption h1{
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #fff4d6;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+}
+
+.custom-caption p{
+    font-size: 1.2rem;
+    color: #f5e6c8;
+    margin-bottom: 20px;
+}
+
+.shop-btn{
+    background: #6f4e37;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.shop-btn:hover{
+    background: #d4a373;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* PRODUCT CARD */
+.card{
+    background: #1f2b16;
+    transition: 0.4s;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.card img{
+    transition: 0.4s;
+}
+
+.card:hover img{
+    transform: scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .carousel-img{
+        height: 60vh;
+    }
+
+    .custom-caption{
+        bottom: 18%;
+    }
+
+    .custom-caption h1{
+        font-size: 2rem;
+    }
+
+    .custom-caption p{
+        font-size: 0.9rem;
+    }
+}
+
+
+/* SECTION TITLE */
+.coffee-heading{
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    color: #f4e7c5;
+}
+
+/* CARD */
+.coffee-card{
+    background: #1d2416;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* HOVER */
+.coffee-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+}
+
+/* IMAGE */
+.img-wrap{
+    overflow: hidden;
+}
+
+.coffee-card img{
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* IMAGE HOVER */
+.coffee-card:hover img{
+    transform: scale(1.08);
+}
+
+/* BODY */
+.card-body{
+    padding: 22px;
+}
+
+/* BADGE */
+.coffee-badge{
+    background: #4f6a35;
+    color: #dce7c2;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* TITLE */
+.coffee-title{
+    color: #f7e8c9;
+    margin-top: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ORIGIN */
+.coffee-origin{
+    color: #b8c7a1;
+    font-size: 14px;
+}
+
+/* DESCRIPTION */
+.coffee-desc{
+    color: #d3d3d3;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* PRICE */
+.coffee-price{
+    color: #e6b566;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* BUTTON */
+.add-btn{
+    background: #6f4e37;
+    color: white;
+    border-radius: 30px;
+    padding: 8px 18px;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.add-btn:hover{
+    background: #d4a373;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .coffee-card img{
+        height: 220px;
+    }
+
+    .coffee-title{
+        font-size: 20px;
+    }
+
+}

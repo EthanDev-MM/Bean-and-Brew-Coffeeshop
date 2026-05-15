@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Brewing Equipment | Bean & Brew</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="BrewingEquipment.css">
+  <link rel="stylesheet" href="coffeeselection.css">
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <img src="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" alt="Logo" class="rounded-circle" style="width:30px;height:30px;">
+    <a class="navbar-brand" href="Coffeeshop.html">Bean & Brew</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="Coffeeshop.html">Home</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="CoffeeSelection.html">Coffee Selection</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Brewing Machines</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Brewing_Machine.html">Brewing Machine</a></li>
+            <li><a class="dropdown-item" href="Otheraccessories.html">Other Accessories</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events and Workshop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Barista_Training.html">Barista Training</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Brewing_Machine.html">Shopping</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Special Offers</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="special-offers.html">Special Offers</a></li>
+            <li><a class="dropdown-item" href="SubscriptionPlans.html">Subscription Plans</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+    <!-- Cart + Search -->
+<div class="d-flex align-items-center gap-2 me-3">
+
+  <!-- 🔍 SEARCH BOX -->
+  <div class="search-wrap" id="searchWrap">
+    <i class="bi bi-search search-icon"></i>
+    <input type="text" id="searchInput" class="search-input" 
+           placeholder="Search products..." 
+           oninput="searchProducts(this.value)">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none;">✕</button>
+  </div>
+
+</nav><!-- navbar and title  and img-->
+
+<!-- HERO CAROUSEL -->
+<section class="container-fluid p-0 mb-5">
+  <div id="coffeeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#coffeeCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#coffeeCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#coffeeCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1600&q=80"
+             class="d-block w-100 carousel-img"
+             alt="Coffee Beans">
+
+        <div class="carousel-caption custom-caption">
+          <h1>Premium Coffee Beans</h1>
+          <p>Freshly roasted beans from around the world</p>
+          <a href="#coffeeProducts" class="btn shop-btn">Shop Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=80"
+             class="d-block w-100 carousel-img"
+             alt="Arabica Coffee">
+
+        <div class="carousel-caption custom-caption">
+          <h1>Luxury Arabica Collection</h1>
+          <p>Rich aroma with smooth premium taste</p>
+          <a href="#coffeeProducts" class="btn shop-btn">Explore</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1600&q=80"
+             class="d-block w-100 carousel-img"
+             alt="Coffee Shop">
+
+        <div class="carousel-caption custom-caption">
+          <h1>Bean & Brew Experience</h1>
+          <p>Discover rare coffee selections</p>
+          <a href="#coffeeProducts" class="btn shop-btn">View Menu</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#coffeeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#coffeeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+    
+
+<!-- Coffee Shop Section -->
+<section class="py-5">
+  <div class="container">
+<h2 class="text-center mb-4 text-uppercase text-white fw-bold coffee-heading">Our Coffee Selection</h2>    <div class="row g-4" id="coffeeProducts"></div>
+    <!-- Cart -->
+    <div class="mt-4 p-3 border rounded" id="cartBox" style="background:#cba873;">
+      <h5>🛒 Cart — Total: $<span id="cartTotal">0.00</span></h5>
+      <div id="cartItems"><p class="text-muted">No items yet.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JavaScript   -->
+<script>
+// PREMIUM COFFEE PRODUCTS
+const coffees = [
+
+  {
+    id:1,
+    name:'Arabica Reserve',
+    origin:'Ethiopia / Colombia',
+    price:24.99,
+    tier:'Premium',
+    img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80'
+  },
+
+  {
+    id:2,
+    name:'Robusta Dark Roast',
+    origin:'Vietnam / Uganda',
+    price:18.99,
+    tier:'Strong Blend',
+    img:'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&q=80'
+  },
+
+  {
+    id:3,
+    name:'Panama Geisha',
+    origin:'Panama',
+    price:39.99,
+    tier:'Luxury',
+    img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80'
+  },
+
+  {
+    id:4,
+    name:'Kopi Luwak',
+    origin:'Indonesia',
+    price:54.99,
+    tier:'Rare Edition',
+    img:'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&q=80'
+  },
+
+  {
+    id:5,
+    name:'Blue Mountain',
+    origin:'Jamaica',
+    price:44.99,
+    tier:'Signature',
+    img:'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&q=80'
+  },
+
+  {
+    id:6,
+    name:'Yirgacheffe Gold',
+    origin:'Ethiopia',
+    price:29.99,
+    tier:'Organic',
+    img:'https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=1200&q=80'
+  },
+];
+
+let cart = {};
+
+function renderProducts() {
+
+  document.getElementById('coffeeProducts').innerHTML = coffees.map(c => `
+
+    <div class="col-lg-4 col-md-6">
+
+      <div class="card coffee-card border-0 h-100">
+
+        <!-- IMAGE -->
+        <div class="img-wrap">
+          <img src="${c.img}" class="card-img-top" alt="${c.name}">
+        </div>
+
+        <!-- BODY -->
+        <div class="card-body">
+
+          <!-- BADGE -->
+          <span class="coffee-badge">${c.tier}</span>
+
+          <!-- TITLE -->
+          <h4 class="coffee-title">${c.name}</h4>
+
+          <!-- ORIGIN -->
+          <p class="coffee-origin">
+            <i class="bi bi-geo-alt-fill"></i>
+            ${c.origin}
+          </p>
+
+          <!-- DESCRIPTION -->
+          <p class="coffee-desc">
+            Premium roasted coffee beans with rich aroma,
+            luxury packaging, and smooth brewing experience.
+          </p>
+
+          <!-- PRICE + BUTTON -->
+          <div class="d-flex justify-content-between align-items-center mt-3">
+
+            <span class="coffee-price">
+              $${c.price.toFixed(2)}
+            </span>
+
+            <button class="btn add-btn"
+              onclick="addToCart(${c.id})">
+
+              <i class="bi bi-cart-plus"></i>
+              Add
+
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  `).join('');
+}
+
+function addToCart(id) {
+  cart[id] = (cart[id] || 0) + 1;
+  renderCart();
+}
+
+function changeQty(id, d) {
+  cart[id] = (cart[id] || 0) + d;
+  if (cart[id] <= 0) delete cart[id];
+  renderCart();
+}
+
+function renderCart() {
+  const ids = Object.keys(cart);
+  const total = ids.reduce((s, id) => s + coffees.find(c => c.id == id).price * cart[id], 0);
+  document.getElementById('cartTotal').textContent = total.toFixed(2);
+  if (!ids.length) { document.getElementById('cartItems').innerHTML = '<p class="text-muted">No items yet.</p>'; return; }
+  document.getElementById('cartItems').innerHTML = ids.map(id => {
+    const c = coffees.find(c => c.id == id);
+    return `<div class="d-flex justify-content-between align-items-center border-bottom py-2">
+      <span>${c.name}</span>
+      <div>
+        <button class="btn btn-sm btn-outline-secondary py-0" onclick="changeQty(${id},-1)">−</button>
+        <span class="mx-2">${cart[id]}</span>
+        <button class="btn btn-sm btn-outline-secondary py-0" onclick="changeQty(${id},1)">+</button>
+      </div>
+      <span style="color:#a0621a; font-weight:500;">$${(c.price * cart[id]).toFixed(2)}</span>
+    </div>`;
+  }).join('');
+}
+
+renderProducts();
+
+
+</script>
+
+
+
+</body>
+</html>

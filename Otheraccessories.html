@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twinkle|University</title>
+
+    <!-- Favicon -->
+  <link rel="icon" href="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" alt="Avatar" class="rounded-circle" style="width:30px; height: 30px;" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="Coffeeshophome.css">
+    <link rel="stylesheet" href="special-offers.css">
+      <link rel="stylesheet" href="BrewingEquipment.css">
+  
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <img src="https://file.aiquickdraw.com/imgcompressed/img/compressed_83043d00ddf74955ae50c3b969def3ba.webp" alt="Logo" class="rounded-circle" style="width:30px;height:30px;">
+    <a class="navbar-brand" href="Coffeeshop.html">Bean & Brew</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="Coffeeshop.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="CoffeeSelection.html">Coffee Selection</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Brewing Equipment</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Brewing_Machine.html">Brewing Machine</a></li>
+            <li><a class="dropdown-item" href="OtherAccessories.html">Other Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events and Workshop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Barista_Training.html">Barista Training</a></li>
+          </ul>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="Coffeeshop.html">Shopping</a>
+        </li>
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Special Offers</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="special-offers.html">Special Offers</a></li>
+            <li><a class="dropdown-item" href="SubscriptionPlans.html">Subscription Plans</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+      <!-- Cart + Search -->
+<div class="d-flex align-items-center gap-2 me-3">
+
+  <!--  SEARCH BOX -->
+  <div class="search-wrap" id="searchWrap">
+    <i class="bi bi-search search-icon"></i>
+    <input type="text" id="searchInput" class="search-input" 
+           placeholder="Search products..." 
+           oninput="searchProducts(this.value)">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none;">✕</button>
+  </div>
+
+  
+  <div class="cart-icon-wrap me-3" onclick="toggleCart()">
+    <i class="bi bi-bag"></i>
+    <span class="cart-badge" id="cartBadge">0</span>
+  </div>
+  </div>s
+
+</nav>
+
+
+
+<!-- HERO BANNER -->
+<section class="page-hero accessories-hero">
+  <div class="hero-content">
+    <p class="hero-sub">Complete Your Setup</p>
+    <h1>Accessories</h1>
+    <p class="hero-desc">Every detail matters ,  the right accessories elevate every brew</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container d-flex gap-2 flex-wrap justify-content-center">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+    <button class="filter-btn" onclick="filterProducts('tamper', this)">Tampers & Tools</button>
+    <button class="filter-btn" onclick="filterProducts('scale', this)">Scales</button>
+    <button class="filter-btn" onclick="filterProducts('cup', this)">Cups & Mugs</button>
+    <button class="filter-btn" onclick="filterProducts('storage', this)">Storage</button>
+  </div>
+</div>
+
+
+
+<!-- PRODUCTS GRID -->
+<section class="products-section">
+  <div class="container">
+    <div class="products-grid" id="productsGrid">
+
+      <!-- Tamper -->
+      <div class="product-card" data-category="tamper">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Tamper">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Normcore Tamper 58mm', 59)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+          <span class="badge-tag">Pro Pick</span>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Normcore</p>
+          <h3 class="card-title">Spring Loaded Tamper 58mm</h3>
+          <p class="card-desc">Consistent 30lbs pressure every tamp. Stainless steel flat base, ergonomic grip.</p>
+          <div class="card-footer-row">
+            <span class="card-price">$59</span>
+            <div class="qty-control" id="qty-0">
+              <button class="qty-btn" onclick="changeQty('qty-0', -1, 'Normcore Tamper 58mm', 59)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-0', 1, 'Normcore Tamper 58mm', 59)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scale -->
+      <div class="product-card" data-category="scale">
+        <div class="card-img-wrap">
+          <img src="https://img.kavosdraugas.lt/72513841-cdfe-4b41-a570-1eb6fea3aa57/1000x1000/acaiapearlblack-4png.jpg">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Acaia Pearl Scale', 229)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+          <span class="badge-tag new">New</span>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Acaia</p>
+          <h3 class="card-title">Pearl Coffee Scale</h3>
+          <p class="card-desc">0.1g precision, built-in timer. Bluetooth enabled with brew ratio tracking app.</p>
+          <div class="card-footer-row">
+            <span class="card-price">$229<span class="price-old">$249</span></span>
+            <div class="qty-control" id="qty-1">
+              <button class="qty-btn" onclick="changeQty('qty-1', -1, 'Acaia Pearl Scale', 229)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-1', 1, 'Acaia Pearl Scale', 229)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cups -->
+      <div class="product-card" data-category="cup">
+        <div class="card-img-wrap">
+          <img src="https://shopdecor.com/cdn/shop/files/serax-carte-blanche-coffee-cup-with-saucer-white-black-B0125001-008_02.webp?v=1774343223&width=1300">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Fellow Monty Cup Set', 38)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Fellow</p>
+          <h3 class="card-title">Serax Carte Blanche espresso cup with saucer</h3>
+          <p class="card-desc">Double-wall ceramic, 4.5oz. Wide rim for latte art, etched measurement lines.</p>
+          <div class="card-footer-row">
+            <span class="card-price">$38</span>
+            <div class="qty-control" id="qty-2">
+              <button class="qty-btn" onclick="changeQty('qty-2', -1, 'Fellow Monty Cup Set', 38)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-2', 1, 'Fellow Monty Cup Set', 38)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Storage -->
+      <div class="product-card" data-category="storage">
+        <div class="card-img-wrap">
+          <img src="data:image/webp;base64,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">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Airscape Coffee Canister', 34)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Planetary Design</p>
+          <h3 class="card-title">Airscape Coffee Canister 1lb</h3>
+          <p class="card-desc">Patented inner lid pushes out air on close. Keeps beans fresh 2x longer.</p>
+          <div class="card-footer-row">
+            <span class="card-price">$34</span>
+            <div class="qty-control" id="qty-3">
+              <button class="qty-btn" onclick="changeQty('qty-3', -1, 'Airscape Coffee Canister', 34)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-3', 1, 'Airscape Coffee Canister', 34)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kettle -->
+      <div class="product-card" data-category="tamper">
+        <div class="card-img-wrap">
+          <img src="data:image/webp;base64,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">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Fellow Stagg EKG Kettle', 165)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+          <span class="badge-tag">Best Seller</span>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Fellow</p>
+          <h3 class="card-title">Stagg EKG PRO Electric Kettle</h3>
+          <p class="card-desc">Variable temperature 135°–212°F, 60min hold. Precision gooseneck pour.</p>
+          <div class="card-footer-row">
+            <span class="card-price">$165<span class="price-old">$195</span></span>
+            <div class="qty-control" id="qty-4">
+              <button class="qty-btn" onclick="changeQty('qty-4', -1, 'Fellow Stagg EKG Kettle', 165)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-4', 1, 'Fellow Stagg EKG Kettle', 165)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Mug -->
+      <div class="product-card" data-category="cup">
+        <div class="card-img-wrap">
+          <img src="data:image/jpeg;base64,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">
+          <div class="card-overlay">
+            <button class="quick-add-btn" onclick="addToCart('Fellow Carter Mug 16oz', 45)">
+              <i class="bi bi-bag-plus"></i> Quick Add
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-brand">Fellow</p>
+          <h3 class="card-title">Carter Move Mug 16oz</h3>
+          <p class="card-desc">Ceramic-coated interior, leak-proof lid. Keeps hot 12hrs, cold 24hrs.</p>
+          <div class="card-footer-row">
+            <span class="card-price">$45</span>
+            <div class="qty-control" id="qty-5">
+              <button class="qty-btn" onclick="changeQty('qty-5', -1, 'Fellow Carter Mug 16oz', 45)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty('qty-5', 1, 'Fellow Carter Mug 16oz', 45)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- No results message -->
+<div class="no-results" id="noResults">
+  <i class="bi bi-search" style="font-size:2rem;"></i>
+  <p>No products found. Try a different keyword.</p>
+</div>
+
+<!-- SHOPPING CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h4><i class="bi bi-bag me-2"></i>Your Cart</h4>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="bi bi-bag-x"></i>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0</span>
+    </div>
+    <button class="checkout-btn">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer__bottom">© 2026 Bean & Brew Co.</div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    if (cat === 'all' || card.dataset.category === cat) {
+      card.style.display = '';
+      card.style.animation = 'fadeUp 0.4s ease forwards';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* ===== BODY ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2b1d17, #3e2c23);
+  color: #fff;
+}
+
+/* ===== SECTION ===== */
+.special-offers h2 {
+  color: #c8a96a;
+  font-weight: bold;
+}
+
+/* ===== CARD ===== */
+.offer-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ===== IMAGE ===== */
+.offer-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ===== CONTENT ===== */
+.offer-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.offer-body h5 {
+  color: #c8a96a;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ===== BUTTON ===== */
+.offer-body button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #c8a96a;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.offer-body button:hover {
+  background: #e6c78b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .offer-card img {
+    height: 180px;
+  }
+}
